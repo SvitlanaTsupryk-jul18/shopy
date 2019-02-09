@@ -2,9 +2,133 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
+
+$mainGrey:#34404b;
+$mainOrange:#ff5912;
 
 body {
     font-family: 'Montserrat', sans-serif;
+    color: $mainGrey;
 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 15px;
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    &__bottom {
+        border-top: 1px solid #edeff1;
+        border-bottom: 1px solid #edeff1;
+        width: 100wh;
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 15px;
+    }
+
+    &__link {
+        padding-right: 1rem;
+        color: $mainGrey;
+
+    }
+
+    &__img {
+        padding-right: 10px;
+    }
+
+    &__social {
+        padding-left: 1rem;
+        transition: .3s;
+
+        &:hover {
+            transform: scale(1.5);
+            filter: invert(.7);
+        }
+    }
+
+    &__left {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-end;
+        margin-top: -10px;
+        margin-bottom: 10px;
+
+        &-icon {
+            padding-right: 30px;
+        }
+
+        &-searh {
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+    }
+}
+
+.logo {
+
+    padding-right: 85px;
+
+    &__name {
+        color: rgba(70, 80, 90, 0.8);
+        font-size: 13px;
+        font-weight: 400;
+    }
+}
+
+.menu {
+    &__list {
+        display: inline-block;
+        font-size: 16px;
+        padding-right: 45px;
+
+        a {
+            color: $mainGrey;
+
+            &:hover {
+                color: $mainOrange;
+            }
+        }
+    }
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__counter {
+        border-radius: 50%;
+        background-color: $mainGrey;
+        color: #fff;
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        padding: 5px;
+        text-align: center;
+    }
+}
+
+.hide {
+    display: none;
 }
