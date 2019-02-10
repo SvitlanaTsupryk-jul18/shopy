@@ -9,6 +9,11 @@
 $mainGrey:#34404b;
 $mainOrange:#ff5912;
 
+%borders {
+    border-top: 1px solid #edeff1;
+    border-bottom: 1px solid #edeff1;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     color: $mainGrey;
@@ -31,8 +36,7 @@ body {
     }
 
     &__bottom {
-        border-top: 1px solid #edeff1;
-        border-bottom: 1px solid #edeff1;
+        @extend %borders;
         width: 100wh;
     }
 
@@ -46,10 +50,18 @@ body {
         padding-right: 1rem;
         color: $mainGrey;
 
+        &:hover {
+            color: $mainOrange;
+        }
     }
 
     &__img {
         padding-right: 10px;
+        transition: .2s;
+
+        &:hover {
+            animation: swing .8s infinite;
+        }
     }
 
     &__social {
@@ -94,6 +106,14 @@ body {
         font-size: 13px;
         font-weight: 400;
     }
+
+    &__img {
+        transition: .2s;
+
+        &:hover {
+            animation: rubberBand .8s 1;
+        }
+    }
 }
 
 .menu {
@@ -105,7 +125,8 @@ body {
         a {
             color: $mainGrey;
 
-            &:hover {
+            &:hover,
+            &:active {
                 color: $mainOrange;
             }
         }
@@ -136,8 +157,7 @@ body {
 .product {
     display: flex;
     justify-content: center;
-    padding-top: 16%;
-    padding-bottom: 20%;
+    padding: 100px 0;
 
     &__images {
         display: flex;
@@ -167,8 +187,39 @@ body {
 
     &__gallery {
         display: flex;
-
     }
+
+    &__details {
+        padding: 0 6%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__name {
+        color: #ff5912;
+        font-size: 53px;
+        font-weight: 900;
+        transform: scaleX(0.8);
+        transform-origin: left;
+        text-align: left;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        text-align: left;
+        transform: scaleX(0.9);
+        transform-origin: left;
+        font-weight: 600;
+        padding: 10px 0;
+    }
+
+    &__description {
+        font-size: 16px;
+        line-height: 30px;
+        padding: 1rem 10% 1rem 0;
+    }
+
 }
 
 .current-img {
@@ -185,4 +236,190 @@ body {
 .fade-in {
     opacity: 0;
     animation: fadeIn 0.5s ease-in 1 forwards;
+}
+
+.choose {
+    @extend %borders;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    font-weight: 600;
+    font-size: 18px;
+
+    span {
+        transition: all .2s;
+        display: inline-block;
+        font-size: 14px;
+        padding: 0 5px;
+
+        &:hover,
+        &:active {
+            color: $mainOrange;
+            transform: scale(1.3);
+            transform-origin: bottom;
+        }
+    }
+
+    &__counter {
+        color: $mainOrange;
+
+
+    }
+
+    &__quantity span {
+        font-size: 18px;
+    }
+
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+    font-weight: 800;
+
+    &__btn {
+        border: none;
+        background: none;
+        padding: 18px;
+        font-size: 18px;
+        box-shadow: none;
+        font-weight: normal;
+
+        &-now {
+            background: $mainOrange;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 18px 24px;
+            box-shadow: none;
+            font-weight: normal;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes rubberBand {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes tada {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    10%,
+    20% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes swing {
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 15deg);
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, -10deg);
+        transform: rotate3d(0, 0, 1, -10deg);
+    }
+
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -5deg);
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
 }
