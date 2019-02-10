@@ -125,6 +125,8 @@ body {
     justify-content: center;
     align-items: center;
     transition: all .3s ease-in; }
+    .product__img-wrapper:hover {
+      transform: scale(1.2); }
   .product__img {
     zoom: 0.2; }
   .product__gallery {
@@ -147,7 +149,7 @@ body {
     transform: scaleX(0.9);
     transform-origin: left;
     font-weight: 600;
-    padding: 10px 0; }
+    padding: 1rem 0; }
   .product__description {
     font-size: 16px;
     line-height: 30px;
@@ -205,7 +207,56 @@ body {
       border-radius: 30px;
       padding: 18px 24px;
       box-shadow: none;
-      font-weight: normal; }
+      font-weight: normal;
+      font-size: 18px;
+      transition: all .3s;
+      border: 1px solid transparent;
+      font-weight: 600; }
+      .order__btn-now:hover {
+        color: #ff5912;
+        background-color: white;
+        border-radius: 2px;
+        border: 1px solid #ff5912; }
+
+.like {
+  transition: .2s; }
+  .like:hover {
+    animation: pulse 1s infinite; }
+
+.addToCart {
+  transition: .2s; }
+  .addToCart:hover {
+    animation: tada 1s 1; }
+
+.share {
+  transition: .2s; }
+  .share:hover {
+    animation: rotateIn 1s 1; }
+
+@keyframes rotateIn {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0; }
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
 
 @keyframes rubberBand {
   from {
