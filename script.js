@@ -1,4 +1,5 @@
 (function () {
+
     showOtherImg();
     burger();
 
@@ -28,6 +29,7 @@
         }
 
     };
+
     ///burger-menu
 
     function burger() {
@@ -47,7 +49,5 @@
             openbtn.classList.add("burger--visibility");
             menu.style.transform = ("translate(500%)");
         }
-
-
     }
 })();
