@@ -93,3 +93,41 @@ body {
 
 .hide {
   display: none; }
+
+.product {
+  display: flex;
+  justify-content: center;
+  padding-top: 16%;
+  padding-bottom: 20%; }
+  .product__images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .product__main-image {
+    text-align: center;
+    padding-bottom: 70px; }
+  .product__img-wrapper {
+    height: 69px;
+    width: 95px;
+    background-color: #f4f6f8;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in; }
+  .product__img {
+    zoom: 0.2; }
+  .product__gallery {
+    display: flex; }
+
+.current-img {
+  height: 275px;
+  width: 145px; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; } }
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in 1 forwards; }
