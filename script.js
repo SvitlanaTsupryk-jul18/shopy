@@ -2,6 +2,7 @@
 
     showOtherImg();
     burger();
+    showSearch();
 
     /// Gallery on click;
 
@@ -49,5 +50,18 @@
             openbtn.classList.add("burger--visibility");
             menu.style.transform = ("translate(500%)");
         }
+    };
+
+    //show input for search
+
+    function showSearch() {
+
+        let input = document.querySelector(".header__info-searh");
+        let inputIcon = document.querySelector(".search");
+
+        inputIcon.addEventListener("click", function () {
+            input.classList.toggle("hide");
+        })
     }
+
 })();
