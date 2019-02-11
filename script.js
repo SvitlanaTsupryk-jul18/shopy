@@ -56,7 +56,7 @@
 
     function showSearch() {
 
-        let input = document.querySelector(".header__info-searh");
+        let input = document.querySelector(".header__info-search");
         let inputIcon = document.querySelector(".search");
 
         inputIcon.addEventListener("click", function () {

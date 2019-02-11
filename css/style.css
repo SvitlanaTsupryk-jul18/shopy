@@ -68,9 +68,10 @@ body {
     transition: .2s all; }
     .header__info-icon:hover {
       transform: scale(1.2); }
-  .header__info-searh {
+  .header__info-search {
     border-radius: 5px;
-    margin-right: 15px; }
+    margin-right: 15px;
+    width: 150px; }
 
 .logo {
   padding-right: 85px; }

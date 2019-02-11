@@ -85,14 +85,21 @@ body {
         align-items: flex-end;
         margin-top: -10px;
         margin-bottom: 10px;
+        transition: .2s all;
 
         &-icon {
             padding-right: 30px;
+            transition: .2s all;
+
+            &:hover {
+                transform: scale(1.2);
+            }
         }
 
-        &-searh {
+        &-search {
             border-radius: 5px;
             margin-right: 15px;
+            width: 150px;
         }
     }
 }
@@ -196,6 +203,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 
     &__counter {
         border-radius: 50%;
@@ -530,6 +542,7 @@ body {
         }
     }
 }
+
 
 @keyframes rotateIn {
     from {
